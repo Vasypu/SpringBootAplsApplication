@@ -52,4 +52,14 @@ public class RestAPIsController {
 		
 		return result;
 	}
+
+	@RequestMapping("/new")
+	public String createNewPoint() {
+
+		String result = "";
+
+		Customer customer = new Customer("Stiv", "Madorskiy");
+		result = repository.save(customer).toString();
+		return result;
+	}
 }
