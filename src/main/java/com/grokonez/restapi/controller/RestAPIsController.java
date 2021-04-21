@@ -62,4 +62,16 @@ public class RestAPIsController {
 		result = repository.save(customer).toString();
 		return result;
 	}
+
+	@RequestMapping("/delete")
+	public String deletePoint(@RequestParam("lastname") String lastName) {
+
+		String result = "";
+
+		for(Customer cust: repository.findByLastName(lastName)){
+			repository.delete(cust);
+		}
+
+		return "Deleted";
+	}
 }
