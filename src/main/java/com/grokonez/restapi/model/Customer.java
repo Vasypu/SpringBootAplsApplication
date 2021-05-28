@@ -8,16 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customer")
+//@Table(name = "customer")
 public class Customer{
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
  
-	@Column(name = "firstname")
+//	@Column(name = "firstname")
 	private String firstName;
  
-	@Column(name = "lastname")
+//	@Column(name = "lastname")
 	private String lastName;
  
 	protected Customer() {
