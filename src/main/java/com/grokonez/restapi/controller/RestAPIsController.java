@@ -21,6 +21,7 @@ import javax.validation.Valid;
 //import com.grokonez.restapi.repository.CustomerRepository;
 
 @RestController
+@RequestMapping("/points")
 public class RestAPIsController {
 	@Autowired
 	CustomerRepository repository;
