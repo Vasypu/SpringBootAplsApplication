@@ -5,22 +5,22 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.grokonez.restapi.repository.CustomerRepository;
+//import com.grokonez.restapi.repository.CustomerRepository;
 
 @SpringBootApplication
-public class SpringBootApIsApplication implements CommandLineRunner{
+public class SpringBootApIsApplication{
 
-	@Autowired
-	CustomerRepository repository;
+//	@Autowired
+//	CustomerRepository repository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootApIsApplication.class, args);
 	}
  
-	@Override
-	public void run(String... arg0) throws Exception {
-		// clear all record if existed before do the tutorial with new data 
-		repository.deleteAll();
-	}
+//	@Override
+//	public void run(String... arg0) throws Exception {
+//		// clear all record if existed before do the tutorial with new data
+//		repository.deleteAll();
+//	}
 }
 
