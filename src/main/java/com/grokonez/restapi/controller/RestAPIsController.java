@@ -23,11 +23,11 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/points")
 public class RestAPIsController {
-//	@Autowired
-//	CustomerRepository repository;
-
 	@Autowired
-	PointRepository pointRepository;
+	CustomerRepository repository;
+
+//	@Autowired
+//	PointRepository pointRepository;
 //	private final PointDAO pointDAO;
 
 //	@Autowired
@@ -40,17 +40,18 @@ public class RestAPIsController {
 //		return "Done";
 //	}
 
-//	@GetMapping
-//	public ResponseEntity<List<Point>> listAllPersons() {
-//		pointRepository.save(new Point("Kate", "Some"));
-//		List<Point> points = pointRepository.findAll();
-//		return ResponseEntity.ok().body(points);
-//	}
-
 	@GetMapping
-	public List getAllNotes() {
-		return pointRepository.findAll();
+//	@RequestMapping
+	public ResponseEntity<Iterable<Point>> listAllPersons() {
+		repository.save(new Point("Kate", "Some"));
+		Iterable<Point> points = repository.findAll();
+		return ResponseEntity.ok().body(points);
 	}
+
+//	@GetMapping
+//	public List getAllNotes() {
+//		return repository.findAll();
+//	}
 
 //	@PostMapping("/newpoint")
 //	public Point createPoint() {
