@@ -40,18 +40,35 @@ public class RestAPIsController {
 //		return "Done";
 //	}
 
-//	@GetMapping
+	@GetMapping
 ////	@RequestMapping
-//	public ResponseEntity<List<Point>> listAllPersons() {
+	public String listAllPersons() {
 //		repository.save(new Point("Kate", "Some"));
 //		Iterable<Point> points = repository.findAll();
-//
+		// save a list of Customers
+		repository.save(Arrays.asList(new Point("Jack", "Smith"), new Point("Adam", "Johnson"), new Point("Kim", "Smith"),
+				new Point("David", "Williams"), new Point("Peter", "Davis")));
+
+		return "Done";
+	}
+
 //		return ResponseEntity.ok().body(points);
 //	}
 
 		@PostMapping("/newpoint")
 	public Point createPoint() {
 		return repository.save(new Point("Some", "Point"));
+	}
+
+	@RequestMapping("/findall")
+	public String findAll(){
+		String result = "";
+
+		for(Point cust : repository.findAll()){
+			result += cust.toString() + "<br>";
+		}
+
+		return result;
 	}
 
 //	@GetMapping
